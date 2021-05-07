@@ -9,14 +9,15 @@ export default function ProjectList(props) {
     projectColumn.push(projects.slice(lengthArr * i, lengthArr * (i + 1)));
   }
 
+  console.log('projectColumn = ');
   console.log(projectColumn);
-
+  
   return (
     <div className="project-list">
       {projectColumn.map(o => (
         <div className="column">
           {o.map(b => (
-            <img src={b.img} alt="b.img"/>
+            <img src={b.img} alt="b.img" key={b.id} />
           ))}
         </div>
       ))}
